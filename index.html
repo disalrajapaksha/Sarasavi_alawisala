@@ -1,54 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Sarasavi Alevisala Web Site</title>
+    <title>Sarasavi Alawisala - University Shop</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" >
-    href= "https://unpkg.com/boxicons@latest/css/boxicons.min.css" >
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
+
 <body>
     <!--Navbar-->
     <header>
         <a href="#" class="logo">
-            <img src="img/logo.png" alt="">
-            </a>
-            <!--menu icon-->
-            <img src="img/menu.png"></i> 
-            <!--links-->
-            <ul class="navbar"> 
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">AboutUS</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#customer">Customersc</a></li>
-            </ul>
-
-            <!--icons-->
-            <div class="header-icon">
-         
-              <img src="img/cart.png"></i> 
-              <img src="img/search-big.png"id="search-icon"></i> 
-            </div>
-
-            <!--search box-->
-            <div class="search-box">
-            <input types="search" placeholder="Search Hear......">
-            </div>
-    </header> 
-            
-
+            <img src="img/logo.png" alt="Sarasavi Alawisala Logo">
         </a>
-        <!---->
-        
 
+        <!--menu icon-->
+        <div class="bx bx-menu" id="menu-icon"></div>
 
+        <!--links-->
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
+        <!--icons-->
+        <div class="header-icon">
+            <i class='bx bx-search' id="search-icon"></i>
+            <i class='bx bx-shopping-bag' id="cart-icon"></i>
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
 
+        <!--search box-->
+        <div class="search-box">
+            <input type="search" placeholder="Search products...">
+        </div>
+    </header>
 
+    <!--Shopping Cart-->
+    <div class="cart" id="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <div class="cart-content" id="cart-content">
+            <!-- Cart items will be added here -->
+        </div>
+        <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price" id="total-price">Rs. 0</div>
+        </div>
+        <button class="btn-buy" id="checkout-btn">Order via WhatsApp</button>
+        <i class='bx bx-x' id="close-cart"></i>
+    </div>
 
+    <!--Hero Section-->
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1>Welcome to <span>Sarasavi Alawisala</span></h1>
+            <p>Your one-stop shop for quality products at university!</p>
+            <p class="sinhala">සරසවි අලෙවිසැල - පැමිණ ලබාගත හැකිය</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
 
-    <script src = "script.js">  </script>
-    
+    <!--Products Section-->
+    <section class="products" id="products">
+        <div class="heading">
+            <h2>Our <span>Products</span></h2>
+            <p>Quality items for university students</p>
+        </div>
+
+        <!--Filter Buttons-->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="electronics">Electronics</button>
+            <button class="filter-btn" data-filter="flowers">Flowers</button>
+            <button class="filter-btn" data-filter="jewelry">Jewelry</button>
+            <button class="filter-btn" data-filter="cosmetics">Cosmetics</button>
+        </div>
+
+        <div class="products-container">
+            <!--Product 1: Electronics Bundle-->
+            <div class="product-box" data-category="electronics">
+                <img src="img/product-electronics.jpg" alt="Electronics Bundle">
+                <div class="product-info">
+                    <h3>Electronics Bundle</h3>
+                    <p>Data Cable (Micro) + Data Cable (Type-C) + Earphone</p>
+                    <div class="price">Rs. 350</div>
+                    <button class="add-cart" data-name="Electronics Bundle" data-price="350"
+                        data-image="img/product-electronics.jpg">
+                        <i class='bx bx-cart-add'></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!--Product 2: Flower Arrangements-->
+            <div class="product-box" data-category="flowers">
+                <img src="img/product-flowers1.jpg" alt="Flower Arrangements">
+                <div class="product-info">
+                    <h3>Flower Arrangements</h3>
+                    <p>Beautiful bouquets for all occasions</p>
+                    <div class="price">From Rs. 200</div>
+                    <a href="https://wa.me/94740341255" class="add-cart whatsapp-btn" target="_blank">
+                        <i class='bx bxl-whatsapp'></i> Order Now
+                    </a>
+                </div>
+            </div>
+
+            <!--Product 3: Flower Bouquets with Gifts-->
+            <div class="product-box" data-category="flowers">
+                <img src="img/product-flowers2.jpg" alt="Flower Bouquets with Gifts">
+                <div class="product-info">
+                    <h3>Flower Bouquets with Gifts</h3>
+                    <p>15% Discount - Customized gifts available</p>
+                    <div class="price">Special Offer!</div>
+                    <a href="https://wa.me/94711483227" class="add-cart whatsapp-btn" target="_blank">
+                        <i class='bx bxl-whatsapp'></i> Order Now
+                    </a>
+                </div>
+            </div>
+
+            <!--Product 4: Earrings Collection-->
+            <div class="product-box" data-category="jewelry">
+                <img src="img/product-earrings.jpg" alt="Earrings Collection">
+                <div class="product-info">
+                    <h3>Earrings Collection</h3>
+                    <p>Limited stock available - Various designs</p>
+                    <div class="price">From Rs. 60</div>
+                    <a href="https://wa.me/94701208901" class="add-cart whatsapp-btn" target="_blank">
+                        <i class='bx bxl-whatsapp'></i> Order Now
+                    </a>
+                </div>
+            </div>
+
+            <!--Product 5: Naturela Cosmetics-->
+            <div class="product-box" data-category="cosmetics">
+                <img src="img/product-cosmetics.jpg" alt="Face & Hair Packs">
+                <div class="product-info">
+                    <h3>Naturela Face & Hair Packs</h3>
+                    <p>Rose Petal, Orange Peel, Guava Leaf, Neem Leaf Powder</p>
+                    <div class="price">Premium Quality</div>
+                    <a href="https://wa.me/94703387653" class="add-cart whatsapp-btn" target="_blank">
+                        <i class='bx bxl-whatsapp'></i> Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--About Section-->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>About <span>Sarasavi Alawisala</span></h2>
+                <p>We are your trusted university shop, providing quality products at affordable prices for students.
+                    From electronics to flowers, jewelry to cosmetics - we have everything you need!</p>
+                <p>සරසවි අලෙවිසැල - විශ්වවිද්‍යාල සිසුන් සඳහා විශේෂ සේවාවක්</p>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class='bx bx-check-circle'></i>
+                        <span>Quality Products</span>
+                    </div>
+                    <div class="feature">
+                        <i class='bx bx-check-circle'></i>
+                        <span>Affordable Prices</span>
+                    </div>
+                    <div class="feature">
+                        <i class='bx bx-check-circle'></i>
+                        <span>Fast Delivery</span>
+                    </div>
+                    <div class="feature">
+                        <i class='bx bx-check-circle'></i>
+                        <span>Student Friendly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Contact Section-->
+    <section class="contact" id="contact">
+        <div class="heading">
+            <h2>Contact <span>Us</span></h2>
+            <p>Get in touch with us via WhatsApp</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-box">
+                <i class='bx bxl-whatsapp'></i>
+                <h3>Flowers</h3>
+                <p>074 0341255</p>
+                <p>0711 48 32 27</p>
+            </div>
+            <div class="contact-box">
+                <i class='bx bxl-whatsapp'></i>
+                <h3>Earrings</h3>
+                <p>070 12 08 901</p>
+                <p>070 38 02 163</p>
+            </div>
+            <div class="contact-box">
+                <i class='bx bxl-whatsapp'></i>
+                <h3>Cosmetics</h3>
+                <p>070 338 7653</p>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="Logo">
+                <p>Sarasavi Alawisala</p>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2024 Sarasavi Alawisala. All rights reserved.</p>
+                <p>University Shop - Quality Products for Students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
