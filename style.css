@@ -441,7 +441,7 @@ header {
 /* About Section */
 .about {
     padding: 80px 14%;
-    background: var(--bg-color);
+    background: linear-gradient(135deg, #f5f1e8 0%, #edeae3 100%);
 }
 
 .about-container {
@@ -674,4 +674,49 @@ footer {
         padding: 8px 15px;
         font-size: 0.9rem;
     }
+}
+
+/* Location Info */
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    color: var(--main-color);
+    font-size: 1.1rem;
+}
+
+.location i {
+    font-size: 1.5rem;
+}
+
+.location p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.location-info {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--bg-color);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.location-info i {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.location-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.location-info p {
+    font-size: 1.1rem;
+    color: #666;
 }
