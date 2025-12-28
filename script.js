@@ -6,15 +6,51 @@ document.addEventListener('DOMContentLoaded', function () {
     loadCart();
     updateCartUI();
 
-    // Mobile menu toggle
-    const menuIcon = document.querySelector('#menu-icon');
-    const navbar = document.querySelector('.navbar');
+    // Header Shadow on Scroll
+    let header = document.querySelector('header');
 
-    if (menuIcon) {
-        menuIcon.onclick = () => {
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('shadow', window.scrollY > 0);
+    });
+
+    // Menu Toggle
+    let menu = document.querySelector('#menu-icon');
+    let navbar = document.querySelector('.navbar');
+
+    if (menu) { // Added check for menu existence
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
             navbar.classList.toggle('active');
-        };
+        }
     }
+
+    window.onscroll = () => {
+        if (menu) { // Added check for menu existence
+            menu.classList.remove('bx-x');
+        }
+        navbar.classList.remove('active');
+    }
+
+    // Reveal Animations
+    const revealElements = document.querySelectorAll('.product-box, .heading, .about-text, .contact-box');
+
+    const revealCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const revealObserver = new IntersectionObserver(revealCallback, {
+        threshold: 0.15
+    });
+
+    revealElements.forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+    });
 
     // Close mobile menu when clicking a link
     const navLinks = document.querySelectorAll('.navbar a');
