@@ -6,12 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     loadCart();
     updateCartUI();
 
-    // Header Shadow on Scroll
-    let header = document.querySelector('header');
-
-    window.addEventListener('scroll', () => {
-        header.classList.toggle('shadow', window.scrollY > 0);
-    });
 
     // Menu Toggle
     let menu = document.querySelector('#menu-icon');
